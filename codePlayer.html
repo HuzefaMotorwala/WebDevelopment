@@ -1,1 +1,134 @@
+<html>
+    <head>
+        <title>jQuery</title>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        
+        <style type="text/css">
+            #topbarcontainer{
+                width: 100%;
+                margin: 0 auto;
+                background-color: #ccc;
+                padding: 5px;
+                height: 30px;
+            
+            }
+            #logo{
+                position: relative;
+                top: 4px;
+                font-weight: bold;
+                font-size: 120%;
+                font-family: sans-serif;
+                float: left;
+                
+            }
+            #buttoncontainer{
+                width: 300px;
+                margin: 0 auto;
+                padding-top: 4px;
+                
+            }
+            .togglebutton{
+                float: left;
+                border: 1px solid grey;
+                padding: 4px;
+                border-right: none;
+            }
+            #html{
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                
+            }
+            
+            #output{
+                border-right: 1px solid grey;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                
+            }
+            .active{
+                background-color: #E8F2FF;
+            }
+            .highlightedbutton{
+                background-color: grey;
+            }
+            textarea{
+                width: 25%;
+                resize: none;
+                border-top: none;
+                border-color: grey;
+            }
+            .panel{
+                float: left;
+                width: 25%;
+            }
+            iframe{
+                border: none;
+            }
+            .hidden{
+                display: none;
+            }
+            
+        
+        
+        </style>
+    </head>
+    <body>
+        
+        <div id="topbarcontainer">
+            <div id="logo">Code Player</div>
+            
+            <div id="buttoncontainer">
+                <div class="togglebutton active" id="html">HTML</div>
+                <div class="togglebutton" id="css">CSS</div>
+                <div class="togglebutton" id="javascript">Javascript</div>
+                <div class="togglebutton active" id="output">Output</div>
+            
+            </div>   
+        
+        </div>
+        
+        <div id="bodycontainer">
+            <textarea id="htmlpanel" class="panel"><p id="paragraph">Hello World!</p></textarea>
+            <textarea id="csspanel" class="panel hidden">p {color:green; }</textarea>
+            <textarea id="javascriptpanel" class="panel hidden">document.getElementById("paragraph").innerHTML="hello huzz!";</textarea>
+            <iframe id="outputpanel" class="panel"></iframe>
+            
+        
+        
+        
+        </div>
+   
+        <script type="text/javascript">
+            function updateoutput(){
+                 $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val()+"</style></head><body>" + ($("#htmlpanel").val()) + "</body></html>");
+                document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val());
+            }
+            
+            $(".togglebutton").hover(function(){
+                $(this).addClass("highlightedbutton");
+            },function(){
+                $(this).removeClass("highlightedbutton");
+            });
+            
+            $(".togglebutton").click(function(){
+                $(this).toggleClass("active");
+                $(this).removeClass("highlightedbutton");
+                var panelid=$(this).attr("id") + "panel";
+                $("#" + panelid).toggle();
+            });
+            
+            $(".panel").height($(window).height() -$("#topbarcontainer").height() -20 );
+             $("iframe").contents().find("html").html($("#htmlpanel").val());
+            updateoutput();
+            
+            $("textarea").on('change keyup paste', function() {
+                
+                updateoutput();
+            });
+        
+        </script>  
+    
+    
+    </body>
 
+</html>
