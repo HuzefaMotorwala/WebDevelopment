@@ -1,1 +1,271 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <title>My Portfolio</title>
+        
+        <style type="text/css">
+            #navbar{
+                background-color:firebrick;
+                width: 100%;
+                margin: 0;
+                padding:0;
+                z-index: 10;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            .nav-link{
+                font-family: 'Varela Round', sans-serif;
+                font-weight: 400;
+                color: white;
+                font-size: 1.2rem;
+                margin-right: 10px;
+                padding: 10px;
+            
+            }
+            .nav-link:hover{
+                color: white;
+                background-color: darkblue;
+                
+            }
+            #welcome-section{
+                background-image: linear-gradient(45deg,black,gray);
+                width: 100%;
+                height: 650px;
+                
+            }
+            #welcome-section h1{
+                color:white;
+                font-weight: 700;
+                font-size: 4rem;
+                padding-top: 250px;
+                text-align: center;
+                opacity: 0.9;
+                
+                
+            }
+            h4{
+                color: firebrick;
+                text-align: center;
+            
+            }
+            #projects{
+                width: 100%;
+                height: auto;
+                background-image:linear-gradient(45deg,cadetblue,darkblue);
+                text-align: center;
+            }
+            h2{
+                font-size: 2rem;
+                font-weight: bold;
+                opacity: 0.9;
+                color: white;
+                padding: 10px;
+                padding-top: 70px;
+            }
+            .projects-grid{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+                grid-gap: 20px;
+                padding: 20px;
+                padding-top: 50px;
+                justify-items: center;
+                
+            }
+            .project-tile{
+                background-color: darkslategrey;
+                border-radius: 5px;
+                width: 300px;
+                height: 300px;
 
+            }
+            .project-img{
+                width: 300px;
+                height: 250px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+            p{
+                padding: 10px;
+                color: white;
+                font-weight: 600;
+            }
+            div a{
+                transition: transform 1s;
+            }
+            
+            
+            div a:hover{
+                text-decoration: none;
+                transform: scale(1.1,1.1);
+                color:gray
+            }
+            #contact{
+                height: 500px;
+                background-image:linear-gradient(45deg,black,gray,black);
+                text-align: center;
+                position: relative;
+            }
+            
+            .fa-facebook{
+                color: black;
+                font-size: 40px;
+                margin-right: 20px;
+                transition: transform 0.3s;
+            }
+            
+            .fa-github{
+                color: black;
+                font-size: 40px;
+                margin-right: 20px;
+                transition: transform 0.3s;
+            }
+            .fa-free-code-camp{
+                color: black;
+                font-size: 40px;
+                margin-right: 20px;
+                transition: transform 0.3s;
+            }
+            
+            .fa-facebook:hover{
+                transform:translateY(10px);
+                color: black;
+                
+            }
+            .fa-github:hover{
+                transform:translateY(10px);
+                color: black;
+            }
+            .fa-free-code-camp:hover{
+                transform:translateY(10px);
+                color: black;
+            }
+            #content{
+                color: white;
+                padding-top: 200px;
+                
+            }
+            #fa-free-code-camp{
+                font-size: 15px;
+            }
+            footer{
+                color: black;
+                position: relative;
+                top: 30%;
+               
+            }
+            
+           
+            @media screen and (max-width:676px){
+                .project-grid{
+                    grid-template-columns: 1fr;
+                    margin-left: 50px;
+                    margin-right: 50px;
+                    justify-content: center;
+                   
+                }
+                
+                .project-tile{
+                    background-color: darkslategrey;
+                    border-radius: 5px;
+                    max-width: 100%;
+                    height: auto;
+                    width: auto;
+                    
+                
+                    
+                }
+                .project-img{
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    max-width: 100%;
+                    height: auto;
+                    width: auto;
+                    
+        
+                }
+                p{
+                    padding: 10px;
+                    color: white;
+                    font-weight: 600;
+                }
+                div a{
+                    transition: transform 0.5s;
+                }
+            
+                div a:hover{
+                    text-decoration: none;
+                    transform: scale(1.05,1.05);
+                    color:gray;
+                
+                }
+               
+            }
+            
+        
+           
+            
+        </style>
+    
+    
+    </head>
+    <body>
+        <nav id="navbar">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#work">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <section id="welcome-section">
+            <h1 id="about">Hey I am Huzefa</h1>
+            <h4><em>A Web Developer</em></h4>
+        </section>
+        
+        <section id="projects">
+            <h2 id="work">Welcome to the Projects section</h2>
+            <h3>Here are some of my projects</h3>
+            
+            <div class="projects-grid">
+                <a href="https://tributepage-rt.glitch.me" target="_blank" class="project-tile">
+                    <img class="project-img" src="tribute-page.png">
+                    <p>&#60; Tribute Page &#47;&#62;</p>
+                </a>
+                <a href="https://tech-documation.glitch.me" target="_blank" class="project-tile">
+                    <img class="project-img" src="technical-document.png">
+                    <p><span>&#60;</span>Technical Documentation<span>&#47;&#62;</span></p>
+                </a>
+                <a href="https://surveyform-hm.glitch.me" target="_blank" class="project-tile">
+                    <img class="project-img" src="survey-form.png">
+                    <p><span>&#60;</span>Survey Form<span>&#47;&#62;</span></p>
+                </a>
+               
+               
+            </div>
+            
+        </section>
+        <section id="contact">
+            <div id="content">
+                <h1>Let's Work Together...</h1>
+                <div class="contact-list">
+                    <a href="https://www.facebook.com/huzefa.motorwala.35" class="fa fa-facebook" id="profile-link" target="_blank"></a>
+                    <a href="https://github.com/HuzefaMotorwala" class="fa fa-github" id="profile-link" target="_blank"></a>
+                    <a href="https://www.freecodecamp.org/huzefa5225" class="fa fa-free-code-camp" id="profile-link" target="_blank"></a>
+                </div>
+            </div>
+            <footer>&#169; Created for freeCodeCamp <i id="fa-free-code-camp" class="fa fa-free-code-camp"></i></footer>
+        </section>
+      
+    </body>
+
+</html>
